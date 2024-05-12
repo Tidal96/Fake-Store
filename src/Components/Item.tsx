@@ -1,19 +1,40 @@
 import "../Styles/Item.css";
-import BoxSx from "./Box";
-type itemProps = { title: string; price: number };
-function Item({ title, price }: itemProps) {
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+type itemProps = {
+  img: string;
+  title: string;
+  category: string;
+  price: number;
+  description: string;
+  showRemoveIcon?: boolean;
+};
+function Item({
+  img,
+  title,
+  category,
+  price,
+  description,
+  showRemoveIcon,
+}: itemProps) {
   return (
-    <div className="content-item">
-      <BoxSx />
-          <span>Fjallraven-Foldsack N...</span>
-          <span>men's clothing</span>
-          <span>
-            109.95<span className="txt-color">$</span>
-          </span>
-          <span>
-            Your perfect pack for everyday use and walks in the forest...
-          </span>
-    </div>
+    <>
+      <table className="content-item">
+        <tr>
+          <td>
+            {" "}
+            <img src={img} alt={title} />
+          </td>
+          <td>{title}</td>
+          <td>{category}</td>
+          <td>
+            {price}
+            <span className="txt-color">$</span>
+          </td>
+          <td>{description}</td>
+          <td>{showRemoveIcon && <DeleteOutlineIcon></DeleteOutlineIcon>}</td>
+        </tr>
+      </table>
+    </>
   );
 }
 export default Item;
