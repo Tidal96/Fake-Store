@@ -1,9 +1,14 @@
 import Menu from "../Molecule/Menu";
-import Item from "../Item";
 import { useState } from "react";
 import ContentGrid from "../ContentGrid";
-
-function Homepage() {
+import Item from "../Item";
+type Cartprops = {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+};
+function Cart() {
   const data = [
     {
       id: 1,
@@ -62,8 +67,11 @@ function Homepage() {
 
   const [selectedItem, setSelectedItem] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
-
-  console.log(selectedItem);
+  const removeItem = (id:number) => {
+    console.log(id);
+    setSelectedItem(null);
+  };
+ 
   return (
     <>
       <Menu
@@ -72,7 +80,7 @@ function Homepage() {
         selectedItem={selectedItem}
         setSelectedItem={setSelectedItem}
       ></Menu>
-      <ContentGrid title="ListOfProducts">
+      <ContentGrid title="Cart">
         {data
           .filter(
             (row) =>
@@ -86,17 +94,14 @@ function Homepage() {
               category={row.category}
               price={row.price}
               description={row.description}
-              showRemoveIcon={false}
+              showRemoveIcon={true}
+              onDelete={removeItem}
               id={row.id}
               data={[]}
             ></Item>
           ))}
-        {/* <Item title={title} price={1}></Item>
-        <Item title={title} price={1}></Item>
-        <Item title={title} price={1}></Item>
-        <Item title={title} price={1}></Item> */}
       </ContentGrid>
     </>
   );
 }
-export default Homepage;
+export default Cart;
