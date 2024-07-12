@@ -1,0 +1,25 @@
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./images/black-friday-concept-with-cart-basket.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-form {
+  background-color: #efc464;
+  border-radius: 8px;
+  width: 50%;
+  height: auto;
+  padding: 20px;
+}
+.title {
+  text-align: center;
+}
+.txt-bg {
+  background-color: #fff;
+  margin: 20px;
+}
