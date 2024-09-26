@@ -31,7 +31,7 @@ function DropdownMenu({ selectedItem, setSelectedItem }: MenuProps) {
     setSelectedItem(select);
     handleClose();
   };
-  console.log(selectedItem);
+  // console.log(selectedItem);
   return (
     <>
       <Button
