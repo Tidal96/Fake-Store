@@ -1,13 +1,14 @@
 .content-item {
-  display: flex;
   border-top: 1px solid gray;
-  gap: 60px;
   padding: 10px 15px 10px 10px;
   align-items: center;
 }
 .content-item img {
   width: 50px;
   height: auto;
+}
+.content-item td{
+  padding-left: 10px;
 }
 .txt-color {
   color: #ee8915;
