@@ -1,8 +1,9 @@
 .menu {
   display: flex;
   border-radius: 10px;
-  width: 90vw;
+  width: 92vw;
   padding-left: 20px;
+  margin: 10px 0px;
 }
 .element {
   display: flex;
