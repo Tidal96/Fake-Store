@@ -8,6 +8,7 @@ interface DataItem {
   description: string;
   price: number;
   image: string;
+  category: string;
 }
 function Homepage() {
   const [error, setError] = useState(null);
